@@ -3,6 +3,7 @@ body {
     color: #CC8C4D;
     font-family: 'Crescendo', Arial, sans-serif;
     text-align: center;
+    margin: 0;
 }
 
 @font-face {
@@ -13,7 +14,7 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
 }
 
 h1 {
@@ -27,15 +28,30 @@ p {
 
 .image-container {
     position: relative;
-    width: 900px; /* Final size of the image */
-    height: 800px; /* Final size of the image */
+    width: 100vw; /* 90% of the viewport width */
+    height: auto; /* Adjusts height based on content */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 0 auto; /* Add this line to center the image container */
+    margin: 0 auto;
 }
 
+#spinningImage {
+    width: 1px; /* Initially very small */
+    height: auto;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: width 2s ease-out, opacity 2s ease-out, transform 2s ease-out;
+}
+
+#spinningImage.grow {
+    width: 90%; /* Adjust size relative to container */
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+/* 
 #spinningImage {
     transform: scale(0) rotate(0deg);
     opacity: 0;
@@ -45,4 +61,4 @@ p {
 #spinningImage.grow {
     transform: scale(.2) rotate(360deg);
     opacity: 1;
-}
+} */
