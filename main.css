@@ -1,0 +1,48 @@
+body {
+    background-color: #281E2B;
+    color: #CC8C4D;
+    font-family: 'Crescendo', Arial, sans-serif;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'Crescendo';
+    src: url('Crescendo.ttf');
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 30px;
+}
+
+
+.image-container {
+    position: relative;
+    width: 900px; /* Final size of the image */
+    height: 800px; /* Final size of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto; /* Add this line to center the image container */
+}
+
+#spinningImage {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+    transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+#spinningImage.grow {
+    transform: scale(.2) rotate(360deg);
+    opacity: 1;
+}
